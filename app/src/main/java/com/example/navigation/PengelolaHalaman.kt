@@ -22,3 +22,9 @@ enum class Halaman{
     Formulir,
     Detail,
 }
+
+fun PengelolaHalaman(
+
+){
+
+}

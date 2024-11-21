@@ -16,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.navigation.model.DataJK
+import com.example.navigation.ui.view.DetailMahasiswaView
 import com.example.navigation.ui.view.FormMahasiswaView
 import com.example.navigation.ui.viewmodel.MahasiswaViewModel
 
@@ -46,6 +47,12 @@ fun PengelolaHalaman(
                         viewModel.saveDataMahasiswa(it)
                         navHostController.navigate(Halaman.Detail.name)
                     }
+                )
+            }
+            composable(route = Halaman.Detail.name) {
+                DetailMahasiswaView(
+                    uiStateMahasiswa = uiState,
+                    navHostController = navHostController
                 )
             }
         }

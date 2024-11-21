@@ -29,5 +29,8 @@ fun PengelolaHalaman(
     viewModel: MahasiswaViewModel = viewModel(),
     navHostController: NavHostController = rememberNavController()
 ){
+    Scaffold { isipadding ->
+        val uiState by viewModel.uiState.collectAsState()
+    }
 
 }

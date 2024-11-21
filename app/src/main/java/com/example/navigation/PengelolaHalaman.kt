@@ -23,8 +23,11 @@ enum class Halaman{
     Detail,
 }
 
+@Composable
 fun PengelolaHalaman(
-
+    modifier: Modifier = Modifier,
+    viewModel: MahasiswaViewModel = viewModel(),
+    navHostController: NavHostController = rememberNavController()
 ){
 
 }

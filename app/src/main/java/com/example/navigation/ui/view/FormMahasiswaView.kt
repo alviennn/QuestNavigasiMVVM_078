@@ -43,6 +43,7 @@ fun FormMahasiswaView(
     Column (Modifier.fillMaxSize().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ){
+        Spacer(modifier = Modifier.padding(20.dp))
         OutlinedTextField(value = nama,
             onValueChange = {nama = it},
             placeholder = { Text("Masukkan Nama")

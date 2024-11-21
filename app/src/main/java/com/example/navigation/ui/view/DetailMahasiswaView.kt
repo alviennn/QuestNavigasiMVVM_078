@@ -6,24 +6,37 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.navigation.model.DataMahasiswa
 
 @Composable
 fun DetailMahasiswaView(
     modifier: Modifier = Modifier,
-    uiStateMahasiswa: DataMahasiswa
+    uiStateMahasiswa: DataMahasiswa,
+    navHostController: NavHostController
 ){
     val listDataMahasiswa = listOf(
         Pair("Nama", uiStateMahasiswa.nama),
         Pair("Gender", uiStateMahasiswa.gender),
         Pair("Alamat", uiStateMahasiswa.alamat),
     )
-    Column (){
+    IconButton(
+        onClick = { navHostController.popBackStack() },
+        modifier = Modifier
+            .padding(20.dp)
+    ) {
+        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back")
+    }
+    Column (modifier = Modifier.padding(15.dp)){
         listDataMahasiswa.forEach{items ->
             CardSection(
                 Judul = items.first,
@@ -37,9 +50,9 @@ fun DetailMahasiswaView(
 fun CardSection(Judul:String, IsiJudul:String){
     Column (horizontalAlignment = Alignment.Start){
 
-        Spacer(modifier = Modifier.padding(5.dp))
+        Spacer(modifier = Modifier.padding(20.dp))
         Row (
-            modifier = Modifier.fillMaxWidth().padding(8.dp),
+            modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ){
             Text(text = Judul, modifier = Modifier.weight(0.8f))
@@ -49,5 +62,6 @@ fun CardSection(Judul:String, IsiJudul:String){
                 modifier = Modifier.weight(2f)
             )
         }
+
     }
 }

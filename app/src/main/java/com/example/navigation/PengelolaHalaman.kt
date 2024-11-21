@@ -38,7 +38,11 @@ fun PengelolaHalaman(
         ){
             composable(route = Halaman.Formulir.name){
                 val konteks = LocalContext.current
-                FormMahasiswaView() { }
+                FormMahasiswaView(
+                    listJk = DataJK.listJk.map {
+                        isi -> konteks.resources.getString(isi)
+                    },
+                ) { }
             }
         }
     }

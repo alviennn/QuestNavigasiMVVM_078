@@ -19,5 +19,6 @@ import com.example.navigation.ui.view.FormMahasiswaView
 import com.example.navigation.ui.viewmodel.MahasiswaViewModel
 
 enum class Halaman{
-
+    Formulir,
+    Detail,
 }

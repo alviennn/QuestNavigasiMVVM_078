@@ -26,13 +26,12 @@ fun DetailMahasiswaView(
 ){
     val listDataMahasiswa = listOf(
         Pair("Nama", uiStateMahasiswa.nama),
+        Pair("Nim", uiStateMahasiswa.nim),
         Pair("Gender", uiStateMahasiswa.gender),
         Pair("Alamat", uiStateMahasiswa.alamat),
     )
     IconButton(
         onClick = { navHostController.popBackStack() },
-        modifier = Modifier
-            .padding(20.dp)
     ) {
         Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Back")
     }
@@ -57,9 +56,7 @@ fun CardSection(Judul:String, IsiJudul:String){
         ){
             Text(text = Judul, modifier = Modifier.weight(0.8f))
             Text(text = ":", modifier = Modifier.weight(0.2f))
-            Text(
-                text = IsiJudul,
-                modifier = Modifier.weight(2f)
+            Text(text = IsiJudul, modifier = Modifier.weight(2f)
             )
         }
 
